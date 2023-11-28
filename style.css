@@ -1,0 +1,107 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: #7b2cbf;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.game-container {
+    width: 100%;
+    max-width: 500px;
+}
+
+h1 {
+    color: white;
+    margin-bottom: 20px;
+}
+
+.player-turn {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.2);
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.cell {
+    background-color: #ffffff;
+    height: 100px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 36px;
+    cursor: pointer;
+}
+
+button {
+    background-color: #4e148c;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    margin-top: 20px;
+    cursor: pointer;
+    outline: none;
+}
+
+button:hover {
+    background-color: #371085;
+}
+
+.mark {
+    color: #4e148c; /* This color is for the 'X' and 'O' marks */
+    font-size: 64px; /* Adjust size as needed */
+    user-select: none; /* Prevents text selection */
+}
+
+.cell.x .mark {
+    color: #ff2e63; /* Color for 'X' */
+}
+
+.cell.circle .mark {
+    color: #23a6d5; /* Color for 'O' */
+}
+
+
+.winning-message {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
+    color: #000000;
+    border-radius: 20px;
+    padding: 20px;
+    z-index: 2;
+}
+
+.winning-message.active {
+    display: block;
+}
+
+@media (max-width: 500px) {
+    .cell {
+        height: 80px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    .player-turn, button {
+        font-size: 14px;
+    }
+}
